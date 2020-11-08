@@ -30,9 +30,13 @@ _NOTE: Make sure backend-config-*.tfvars is added to .gitignore_
 1. Execute Terraform initialization, to prepare the environment
     ```terraform init -backend-config backend-config-eng.tfvars```
 1. Execute Terraform plan, to view all the deployments that are planned within the subscription. Save it to file
-    ```terraform plan```
+    ```
+    terraform plan
+    ```
 1. Ready to deploy, Finally execute with auto approval (ofcouse optional)
-    ```terraform apply -auto-approve```
+    ```
+    terraform apply -auto-approve
+    ```
 
 If there was any deployment error, you know what to do.. debug 
 
@@ -42,5 +46,11 @@ Once the deployment is complete, check what is deployed
 
 ### Access 
 Yes almost there, within the deployment notice that the aks-administrator group is created without memebers, add members and checkout the behavior. 
+
+### Finally Destroy
+As I complete all my testing, destroying the entire setup
+```
+terraform destroy -auto-approve
+```
 
 That is it.. 
